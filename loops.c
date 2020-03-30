@@ -7,6 +7,7 @@ void printEvenNumbers(int);
 void printMultiplicationTable(int,int);
 int sumOfNNumbers(int,int);
 int productOfNNumbers(int,int);
+void printOddNumbersBetween(int,int);
 
 int main(void){
   int number;
@@ -45,6 +46,12 @@ int main(void){
   scanf("%d",&endingRange);
   int product = productOfNNumbers(startingRange,endingRange);
   printf("product of numbers from %d to %d is %d\n",startingRange,endingRange,product);
+
+  printf("enter starting range and ending range for for print odd numbers ");
+  scanf("%d",&startingRange);
+  scanf("%d",&endingRange);
+  printf("odd numbers betwwn %d to %d is :\n",startingRange,endingRange);
+  printOddNumbersBetween(startingRange,endingRange);
 
   return 0;
 }
@@ -92,14 +99,22 @@ int sumOfNNumbers(int startingRange,int endingRange){
   for(;index<=endingRange;index++){
     sum=sum+index;
   }
-return sum;
+  return sum;
 }
 
 int productOfNNumbers(int startingRange,int endingRange){
   int product = 1;
   int index= startingRange;
-  for(;index<=endingRange;index++){
-    product=product+index;
+  for(;index<=endingRange;index++)
+  {
+    product=product*index;
   }
-return product;
+  return product;
+}
+
+void printOddNumbersBetween(int startingRange,int endingRange){
+  int index= startingRange+(startingRange%2==0);
+  for(;index<=endingRange;index+=2){
+    printf("%d\n",index);
+  }
 }
