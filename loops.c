@@ -10,11 +10,12 @@ int productOfNNumbers(int,int);
 void printOddNumbersBetween(int,int);
 int sumOfEvenNumbers(int,int);
 void printOddNumbersInReverse(int,int);
+void printEveryNthNumber(int,int,int);
 
 int main(void){
   int number;
   int multiplicand,multiplier;
-  int startingRange,endingRange;
+  int startingRange,endingRange,difference;
 
   printf("enter a number to calculate factorial :");
   scanf("%d",&number);
@@ -61,11 +62,18 @@ int main(void){
   int sumOfEven = sumOfEvenNumbers(startingRange,endingRange);
   printf("sum of even numbers between %d and %d is %d\n",startingRange,endingRange,sumOfEven);
 
-  printf("enter starting range and ending range for for print odd numbers in reverse :  ");
+  printf("enter starting range and ending range for for print odd numbers in reverse : ");
   scanf("%d",&startingRange);
   scanf("%d",&endingRange);
   printf("odd numbers between %d and %d is :\n",startingRange,endingRange);
   printOddNumbersInReverse(startingRange,endingRange);
+
+  printf("enter starting range , ending range and difference to print every nth number : ");
+  scanf("%d",&startingRange);
+  scanf("%d",&endingRange);
+  scanf("%d",&difference);
+  printf("every %d number between %d and %d is :\n",difference,startingRange,endingRange);
+  printEveryNthNumber(startingRange,endingRange,difference);
 
   return 0;
 }
@@ -145,6 +153,13 @@ int sumOfEvenNumbers(int startingRange,int endingRange){
 void printOddNumbersInReverse(int startingRange,int endingRange){
   int index= endingRange-(endingRange%2==0);
   for(;index>=startingRange;index-=2){
+    printf("%d\n",index);
+  }
+}
+
+void printEveryNthNumber(int startingRange,int endingRange,int difference){
+  int index= startingRange;
+  for(;index<=endingRange;index+=difference){
     printf("%d\n",index);
   }
 }
