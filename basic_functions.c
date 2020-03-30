@@ -6,10 +6,12 @@ int square(int);
 int cube(int);
 int gcd(int,int);
 int lcm(int,int);
+int simpleInterest(int,int,int);
 
 int main(void)
 {
   int number1,number2;
+  int amount,rateOfInterest,timePeriod;
 
   printf("enter a number to check even or not : ");
   scanf("%d",&number1);
@@ -36,6 +38,15 @@ int main(void)
   scanf("%d",&number1);
   scanf("%d",&number2);
   printf("LCM of %d and %d is %d\n",number1,number2,lcm(number1,number2));
+
+  printf("enter details to find Simple Interest :\n ");
+  printf(" principal amount : ");
+  scanf("%d",&amount);
+  printf(" rate of Interest : ");
+  scanf("%d",&rateOfInterest);
+  printf(" time period : ");
+  scanf("%d",&timePeriod);
+  printf("Simple Interest of %d is %d\n",amount,simpleInterest(amount,rateOfInterest,timePeriod));
 
   return 0;
 };
@@ -70,5 +81,9 @@ int gcd(int number1,int number2){
 
 int lcm(int number1,int number2){
   return (number1*number2)/gcd(number1,number2);
+}
+
+int simpleInterest(int amount,int rateOfInterest ,int timePeriod){
+  return (amount*rateOfInterest*timePeriod)/100;
 }
 
