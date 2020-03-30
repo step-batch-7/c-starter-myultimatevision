@@ -9,6 +9,7 @@ int sumOfNNumbers(int,int);
 int productOfNNumbers(int,int);
 void printOddNumbersBetween(int,int);
 int sumOfEvenNumbers(int,int);
+void printOddNumbersInReverse(int,int);
 
 int main(void){
   int number;
@@ -59,6 +60,12 @@ int main(void){
   scanf("%d",&endingRange);
   int sumOfEven = sumOfEvenNumbers(startingRange,endingRange);
   printf("sum of even numbers between %d and %d is %d\n",startingRange,endingRange,sumOfEven);
+
+  printf("enter starting range and ending range for for print odd numbers in reverse :  ");
+  scanf("%d",&startingRange);
+  scanf("%d",&endingRange);
+  printf("odd numbers between %d and %d is :\n",startingRange,endingRange);
+  printOddNumbersInReverse(startingRange,endingRange);
 
   return 0;
 }
@@ -133,4 +140,11 @@ int sumOfEvenNumbers(int startingRange,int endingRange){
     sum=sum+index;
   }
   return sum;
+}
+
+void printOddNumbersInReverse(int startingRange,int endingRange){
+  int index= endingRange-(endingRange%2==0);
+  for(;index>=startingRange;index-=2){
+    printf("%d\n",index);
+  }
 }
