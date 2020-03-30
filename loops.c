@@ -5,10 +5,12 @@ void fibonacci(int);
 void printOddNumbers(int);
 void printEvenNumbers(int);
 void printMultiplicationTable(int,int);
+int sumOfNNumbers(int,int);
 
 int main(void){
   int number;
   int multiplicand,multiplier;
+  int startingRange,endingRange;
 
   printf("enter a number to calculate factorial :");
   scanf("%d",&number);
@@ -30,6 +32,13 @@ int main(void){
   scanf("%d",&multiplicand);
   scanf("%d",&multiplier);
   printMultiplicationTable(multiplicand,multiplier);
+
+  printf("enter starting range and ending range for sum : ");
+  scanf("%d",&startingRange);
+  scanf("%d",&endingRange);
+  int sum = sumOfNNumbers(startingRange,endingRange);
+  printf("Sum of numbers from %d to %d is %d\n",startingRange,endingRange,sum);
+
   return 0;
 }
 
@@ -68,4 +77,13 @@ void printMultiplicationTable(int multiplicand,int multiplier){
  for(int index=1;index<=multiplier;index++){
    printf("%d x %d = %d\n",multiplicand,index,multiplicand*index);
  }
+}
+
+int sumOfNNumbers(int startingRange,int endingRange){
+  int sum = 0;
+  int index= startingRange;
+  for(;index<=endingRange;index++){
+    sum=sum+index;
+  }
+return sum;
 }
