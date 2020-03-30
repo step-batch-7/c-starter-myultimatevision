@@ -6,6 +6,7 @@ void printOddNumbers(int);
 void printEvenNumbers(int);
 void printMultiplicationTable(int,int);
 int sumOfNNumbers(int,int);
+int productOfNNumbers(int,int);
 
 int main(void){
   int number;
@@ -38,6 +39,12 @@ int main(void){
   scanf("%d",&endingRange);
   int sum = sumOfNNumbers(startingRange,endingRange);
   printf("Sum of numbers from %d to %d is %d\n",startingRange,endingRange,sum);
+
+  printf("enter starting range and ending range for product : ");
+  scanf("%d",&startingRange);
+  scanf("%d",&endingRange);
+  int product = productOfNNumbers(startingRange,endingRange);
+  printf("product of numbers from %d to %d is %d\n",startingRange,endingRange,product);
 
   return 0;
 }
@@ -86,4 +93,13 @@ int sumOfNNumbers(int startingRange,int endingRange){
     sum=sum+index;
   }
 return sum;
+}
+
+int productOfNNumbers(int startingRange,int endingRange){
+  int product = 1;
+  int index= startingRange;
+  for(;index<=endingRange;index++){
+    product=product+index;
+  }
+return product;
 }
