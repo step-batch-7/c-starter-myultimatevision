@@ -4,9 +4,11 @@ long int factorial(int);
 void fibonacci(int);
 void printOddNumbers(int);
 void printEvenNumbers(int);
+void printMultiplicationTable(int,int);
 
 int main(void){
   int number;
+  int multiplicand,multiplier;
 
   printf("enter a number to calculate factorial :");
   scanf("%d",&number);
@@ -23,6 +25,11 @@ int main(void){
   printf("enter a number to get even numbers series between 1 to n :");
   scanf("%d",&number);
   printEvenNumbers(number); 
+
+  printf("enter multiplicand and multiplier : ");
+  scanf("%d",&multiplicand);
+  scanf("%d",&multiplier);
+  printMultiplicationTable(multiplicand,multiplier);
   return 0;
 }
 
@@ -55,4 +62,10 @@ void printEvenNumbers(int number){
   for(index=2;index<=number;index+=2){
     printf("%d\n",index);
   }
+}
+
+void printMultiplicationTable(int multiplicand,int multiplier){
+ for(int index=1;index<=multiplier;index++){
+   printf("%d x %d = %d\n",multiplicand,index,multiplicand*index);
+ }
 }
