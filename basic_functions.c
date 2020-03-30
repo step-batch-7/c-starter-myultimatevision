@@ -3,6 +3,7 @@
 int isEven(int);
 int isOdd(int);
 int square(int);
+int cube(int);
 
 int main(void)
 {
@@ -16,6 +17,9 @@ int main(void)
   printf("enter a number to find Square : ");
   scanf("%d",&number);
   printf("square of %d is %d\n",number,square(number));
+  printf("enter a number to find Cube : ");
+  scanf("%d",&number);
+  printf("cube of %d is %d\n",number,cube(number));
   return 0;
 };
 
@@ -29,8 +33,13 @@ int isEven(int number)
   return number%2==0;
 }
 
-int square(int num)
+int square(int number)
 {
- return num*num;
+ return number*number;
+}
+
+int cube(int number)
+{
+ return number*square(number);
 }
 
