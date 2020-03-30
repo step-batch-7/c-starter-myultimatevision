@@ -11,10 +11,11 @@ double simpleInterest(int,int,int);
 double compoundInterest(int,float,int,int);
 double temperateFromCentigradeToFohrenheit(float);
 double temperateFromFohrenheitToCentigrade(float);
+int greatestOfThreeNumbers(int,int,int);
 
 int main(void)
 {
-  int number1,number2;
+  int number1,number2,number3;
   int amount,rateOfInterest,timePeriod,numberOfTimes;
   float temperature;
 
@@ -73,6 +74,13 @@ int main(void)
   scanf("%f",&temperature);
   printf("centigrade of %f is %lf\n",temperature,temperateFromFohrenheitToCentigrade(temperature));
 
+  printf("enter three numbers to find greatest of three : ");
+  scanf("%d",&number1);
+  scanf("%d",&number2);
+  scanf("%d",&number3);
+  int greatest = greatestOfThreeNumbers(number1,number2,number3);
+  printf("greatest of %d,%d and %d is %d\n",number1,number2,number3,greatest);
+
   return 0;
 };
 
@@ -122,4 +130,11 @@ double temperateFromCentigradeToFohrenheit(float temperature){
 
 double temperateFromFohrenheitToCentigrade(float temperature){
   return (temperature-32)*5/9;
+}
+
+int greatestOfThreeNumbers(int number1,int number2,int number3){
+  if(number1>=number2){
+    return number1>=number3?number1:number3;
+  }
+  return number2>=number3?number2:number3;
 }
