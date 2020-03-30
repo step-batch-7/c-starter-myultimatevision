@@ -10,6 +10,7 @@ int lcm(int,int);
 double simpleInterest(int,int,int);
 double compoundInterest(int,float,int,int);
 double temperateFromCentigradeToFohrenheit(float);
+double temperateFromFohrenheitToCentigrade(float);
 
 int main(void)
 {
@@ -68,6 +69,10 @@ int main(void)
   scanf("%f",&temperature);
   printf("Fohrenheit of %f is %lf\n",temperature,temperateFromCentigradeToFohrenheit(temperature));
 
+  printf("enter temperature to convert to fohrenheit : ");
+  scanf("%f",&temperature);
+  printf("centigrade of %f is %lf\n",temperature,temperateFromFohrenheitToCentigrade(temperature));
+
   return 0;
 };
 
@@ -115,3 +120,6 @@ double temperateFromCentigradeToFohrenheit(float temperature){
   return (temperature*9/5)+32;
 }
 
+double temperateFromFohrenheitToCentigrade(float temperature){
+  return (temperature-32)*5/9;
+}
