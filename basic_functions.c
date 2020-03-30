@@ -12,6 +12,7 @@ double compoundInterest(int,float,int,int);
 double temperateFromCentigradeToFohrenheit(float);
 double temperateFromFohrenheitToCentigrade(float);
 int greatestOfThreeNumbers(int,int,int);
+float averageOfThreeNumbers(int,int,int);
 
 int main(void)
 {
@@ -81,6 +82,13 @@ int main(void)
   int greatest = greatestOfThreeNumbers(number1,number2,number3);
   printf("greatest of %d,%d and %d is %d\n",number1,number2,number3,greatest);
 
+  printf("enter three numbers to find average of three : ");
+  scanf("%d",&number1);
+  scanf("%d",&number2);
+  scanf("%d",&number3);
+  float average = averageOfThreeNumbers(number1,number2,number3);
+  printf("average of %d,%d and %d is %f\n",number1,number2,number3,average);
+
   return 0;
 };
 
@@ -137,4 +145,8 @@ int greatestOfThreeNumbers(int number1,int number2,int number3){
     return number1>=number3?number1:number3;
   }
   return number2>=number3?number2:number3;
+}
+
+float averageOfThreeNumbers(int number1,int number2,int number3){
+    return (float)(number1+number2+number3)/3;
 }
