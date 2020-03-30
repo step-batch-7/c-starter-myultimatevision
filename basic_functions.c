@@ -9,11 +9,13 @@ int gcd(int,int);
 int lcm(int,int);
 double simpleInterest(int,int,int);
 double compoundInterest(int,float,int,int);
+double temperateFromCentigradeToFohrenheit(float);
 
 int main(void)
 {
   int number1,number2;
   int amount,rateOfInterest,timePeriod,numberOfTimes;
+  float temperature;
 
   printf("enter a number to check even or not : ");
   scanf("%d",&number1);
@@ -62,6 +64,10 @@ int main(void)
   float rate = (float)rateOfInterest/100;
   printf("Compound Interest of %d is %lf\n",amount,compoundInterest(amount,rate,numberOfTimes,timePeriod));
 
+  printf("enter temperature to convert to fohrenheit : ");
+  scanf("%f",&temperature);
+  printf("Fohrenheit of %f is %lf\n",temperature,temperateFromCentigradeToFohrenheit(temperature));
+
   return 0;
 };
 
@@ -104,3 +110,8 @@ double simpleInterest(int amount,int rateOfInterest ,int timePeriod){
 double compoundInterest(int amount,float rateOfInterest,int numberOfTimes ,int timePeriod){
   return (double)amount*pow((1+rateOfInterest/numberOfTimes),(numberOfTimes*timePeriod));
 }
+
+double temperateFromCentigradeToFohrenheit(float temperature){
+  return (temperature*9/5)+32;
+}
+
