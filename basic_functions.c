@@ -5,6 +5,7 @@ int isOdd(int);
 int square(int);
 int cube(int);
 int gcd(int,int);
+int lcm(int,int);
 
 int main(void)
 {
@@ -30,6 +31,11 @@ int main(void)
   scanf("%d",&number1);
   scanf("%d",&number2);
   printf("GCD of %d and %d is %d\n",number1,number2,gcd(number1,number2));
+
+  printf("enter two numbers to find LCM : ");
+  scanf("%d",&number1);
+  scanf("%d",&number2);
+  printf("LCM of %d and %d is %d\n",number1,number2,lcm(number1,number2));
 
   return 0;
 };
@@ -60,5 +66,9 @@ int gcd(int number1,int number2){
     return number2;
   }
   return gcd(number2,number1 % number2);
+}
+
+int lcm(int number1,int number2){
+  return (number1*number2)/gcd(number1,number2);
 }
 
