@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 int isEven(int);
 int isOdd(int);
@@ -6,12 +7,13 @@ int square(int);
 int cube(int);
 int gcd(int,int);
 int lcm(int,int);
-int simpleInterest(int,int,int);
+double simpleInterest(int,int,int);
+double compoundInterest(int,float,int,int);
 
 int main(void)
 {
   int number1,number2;
-  int amount,rateOfInterest,timePeriod;
+  int amount,rateOfInterest,timePeriod,numberOfTimes;
 
   printf("enter a number to check even or not : ");
   scanf("%d",&number1);
@@ -46,7 +48,19 @@ int main(void)
   scanf("%d",&rateOfInterest);
   printf(" time period : ");
   scanf("%d",&timePeriod);
-  printf("Simple Interest of %d is %d\n",amount,simpleInterest(amount,rateOfInterest,timePeriod));
+  printf("Simple Interest of %d is %lf\n",amount,simpleInterest(amount,rateOfInterest,timePeriod));
+
+  printf("enter details to find Compound Interest\n ");
+  printf(" principal investment : ");
+  scanf("%d",&amount);
+  printf(" rate of Interest : ");
+  scanf("%d",&rateOfInterest);
+  printf(" number of times : ");
+  scanf("%d",&numberOfTimes);
+  printf(" time period : ");
+  scanf("%d",&timePeriod);
+  float rate = (float)rateOfInterest/100;
+  printf("Compound Interest of %d is %lf\n",amount,compoundInterest(amount,rate,numberOfTimes,timePeriod));
 
   return 0;
 };
@@ -83,7 +97,10 @@ int lcm(int number1,int number2){
   return (number1*number2)/gcd(number1,number2);
 }
 
-int simpleInterest(int amount,int rateOfInterest ,int timePeriod){
-  return (amount*rateOfInterest*timePeriod)/100;
+double simpleInterest(int amount,int rateOfInterest ,int timePeriod){
+  return (double)(amount*rateOfInterest*timePeriod)/100;
 }
 
+double compoundInterest(int amount,float rateOfInterest,int numberOfTimes ,int timePeriod){
+  return (double)amount*pow((1+rateOfInterest/numberOfTimes),(numberOfTimes*timePeriod));
+}
