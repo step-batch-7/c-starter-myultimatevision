@@ -3,6 +3,7 @@
 long int factorial(int);
 void fibonacci(int);
 void printOddNumbers(int);
+void printEvenNumbers(int);
 
 int main(void){
   int number;
@@ -15,9 +16,13 @@ int main(void){
   scanf("%d",&number);
   fibonacci(number);
 
-  printf("enter a number to get odd numbers series between 1 to n ");
+  printf("enter a number to get odd numbers series between 1 to n :");
   scanf("%d",&number);
   printOddNumbers(number); 
+
+  printf("enter a number to get even numbers series between 1 to n :");
+  scanf("%d",&number);
+  printEvenNumbers(number); 
   return 0;
 }
 
@@ -41,6 +46,13 @@ void fibonacci(int number){
 void printOddNumbers(int number){
   int index ;
   for(index=1;index<=number;index+=2){
+    printf("%d\n",index);
+  }
+}
+
+void printEvenNumbers(int number){
+  int index;
+  for(index=2;index<=number;index+=2){
     printf("%d\n",index);
   }
 }
